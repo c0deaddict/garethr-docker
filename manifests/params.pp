@@ -38,8 +38,8 @@ class docker::params {
   $docker_group_default         = 'docker'
   case $::osfamily {
     'Debian' : {
-      case $::operatingsystem {
-        'Ubuntu' : {
+      case $::lsbdistid {
+        'Ubuntu', 'Raspbian' : {
           $package_name   = $package_name_default
           $service_name   = $service_name_default
           $docker_command = $docker_command_default
