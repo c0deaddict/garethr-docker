@@ -44,6 +44,9 @@ class docker::params {
             include docker::systemd_reload
           }
         }
+        "LinuxMint": {
+          $package_release = "ubuntu-trusty"
+        }
         default: {
           $package_release = "debian-${::lsbdistcodename}"
           if (versioncmp($::operatingsystemmajrelease, '8') >= 0) {
